@@ -20,14 +20,15 @@ export const BuildingsList = styled.ul`
     }
 
     > strong {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 20px;
       color: #333;
-      margin-top: 5px;
+      margin: 5px 20px;
+      align-items: center;
     }
 
     > span {
-      font-size: 21px;
+      font-size: 14px;
       font-weight: bold;
       margin: 5px 0 20px;
     }

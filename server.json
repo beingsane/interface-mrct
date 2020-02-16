@@ -1,0 +1,52 @@
+{
+  "buildings": [
+    {
+      "id": "34234",
+      "name": "925 Independência",
+      "developer": {
+        "id": "22",
+        "name": "Goldsztein & Cyrela"
+      },
+      "address": {
+        "street_type": "Avenida",
+        "street": "Independência",
+        "number": 925,
+        "area": "Independência",
+        "city": "Porto Alegre",
+        "state": "RS",
+        "zip_code": "08090-284",
+        "latitude": -30.0346,
+        "longitude": -51.2177
+      },
+      "min_price": 353585.41,
+      "price_per_private_square_meter": 8615.63,
+      "min_bathrooms": 1,
+      "max_bathrooms": 1,
+      "min_area": 41.04,
+      "max_area": 41.04,
+      "min_bedrooms": 1,
+      "max_bedrooms": 1,
+      "min_suites": 1,
+      "max_suites": 1,
+      "min_parking": 1,
+      "max_parking": 3,
+      "description": "Com endereço privilegiado e arquitetura sofisticada, o 925 Independência...",
+      "finality": "Comercial",
+      "opportunity": {
+        "broker": true,
+        "client": true,
+        "client_max_discount": 7,
+        "exchange_units": false
+      },
+      "default_image": {
+        "id": "Z1",
+        "description": "hall de entrada",
+        "200x140": "http://s3.aws.com/u.prod.omobi/images/properties/thumb/15878.png",
+        "520x280": "http://s3.aws.com/u.prod.omobi/images/properties/featured_modern/15878.png"
+      },
+      "orulo_url": "https://www.orulo.com.br/buildings/34234",
+      "updated_at": "01/08/2016 15:29:42"
+    }
+  ]
+
+}

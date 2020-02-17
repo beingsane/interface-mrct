@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 export const BuildingsList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
   list-style: none;
 
@@ -17,6 +17,7 @@ export const BuildingsList = styled.ul`
     img {
       align-self: center;
       max-width: 280px;
+      align-items: baseline;
     }
 
     > strong {
@@ -29,6 +30,12 @@ export const BuildingsList = styled.ul`
 
     > span {
       font-size: 14px;
+      font-weight: bold;
+      margin: 5px 0 20px;
+    }
+
+    > p {
+      font-size: 12px;
       font-weight: bold;
       margin: 5px 0 20px;
     }

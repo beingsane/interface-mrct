@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { token } from '../config/auth';
+// import { getToken } from './auth';
 
 const token = 'a8vZ5ZYVb9c4TyaPwhKTfx8ilehxmPG6lp86KASiHgU';
 

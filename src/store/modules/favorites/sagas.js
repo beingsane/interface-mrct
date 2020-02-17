@@ -2,7 +2,7 @@ import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 
 import api from '../../../services/api';
 import history from '../../../services/history';
-import { formatPrice } from '../../../util/format';
+// import { formatPrice } from '../../../util/format';
 
 import { addToFavoritesSuccess } from './actions';
 
@@ -12,12 +12,15 @@ function* addToFavorites({ id }) {
   );
 
   if (!buildingExists) {
-    const response = yield call(api.get, `/buildings/${id}`);
+    const response = yield call(
+      api.get,
+      `https://www.orulo.com.br/api/v2/buildings/${id}`
+    );
 
     const data = {
       ...response.data,
       amount: 1,
-      priceFormatted: formatPrice(response.data.min_price),
+      // priceFormatted: formatPrice(response.data.min_price),
     };
 
     yield put(addToFavoritesSuccess(data));

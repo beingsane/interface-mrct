@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { MdDelete } from 'react-icons/md';
 
+import { formatPrice } from '../../util/format';
 import * as FavActions from '../../store/modules/favorites/actions';
 
 import { Container, BuildingsTable } from './styles';
@@ -30,11 +31,14 @@ export default function Favorites() {
           {favorites.map(building => (
             <tr>
               <td>
-                <img src={building.default_image} alt={building.name} />
+                <strong>{building.name}</strong>
+                <img
+                  src={building.default_image['520x280']}
+                  alt={building.name}
+                />
               </td>
               <td>
-                <strong>{building.name}</strong>
-                <span>{building.priceFormatted}</span>
+                <span>{formatPrice(building.min_price)}</span>
               </td>
               <td>
                 <div>

@@ -1,20 +1,21 @@
-export function addToFavoritesRequest(id) {
+export function addToFavorites(building) {
   return {
-    type: '@fav/ADD_REQUEST',
-    id,
-  };
-}
-
-export function addToFavoritesSuccess(building) {
-  return {
-    type: '@fav/ADD_SUCCESS',
+    type: '@favorites/ADD',
     building,
   };
 }
 
 export function removeFromFavorites(id) {
   return {
-    type: '@fav/REMOVE',
+    type: '@favorites/REMOVE',
     id,
   };
 }
+/*
+export function addToFavoritesSuccess(building) {
+  return {
+    type: '@fav/ADD_SUCCESS',
+    building,
+  };
+}
+*/

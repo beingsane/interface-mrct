@@ -1,10 +1,12 @@
+import 'dotenv/config';
+
 import axios from 'axios';
 // import { getToken } from './auth';
 
-const token = 'a8vZ5ZYVb9c4TyaPwhKTfx8ilehxmPG6lp86KASiHgU';
+const token = process.env.REACT_APP_API_KEY;
 
 const api = axios.create({
-  baseURL: 'https://www.orulo.com.br/api/v2/buildings',
+  baseURL: 'https://www.orulo.com.br/api/v2',
   timeout: 3000,
   headers: { Authorization: `Bearer ${token}` },
 });

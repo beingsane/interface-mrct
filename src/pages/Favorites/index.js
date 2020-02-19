@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { MdDelete } from 'react-icons/md';
@@ -15,6 +15,14 @@ export default function Favorites() {
     }))
   );
 
+  sessionStorage.setItem(favorites, 0);
+
+  const [value] = useState(sessionStorage.getItem(favorites));
+
+  useEffect(() => {
+    sessionStorage.setItem(favorites, value);
+  }, [favorites, value]);
+
   const dispatch = useDispatch();
 
   return (
@@ -22,9 +30,9 @@ export default function Favorites() {
       <BuildingsTable>
         <thead>
           <tr>
-            <th />
-            <th>Imóveis do seu sonho</th>
-            <th />
+            <td colSpan="3">
+              <span>Imóveis do seu sonho</span>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -32,11 +40,15 @@ export default function Favorites() {
             <tr>
               <td>
                 <strong>{building.name}</strong>
+
                 <img
                   src={building.default_image['520x280']}
                   alt={building.name}
                 />
+
+                <p>{building.description}</p>
               </td>
+
               <td>
                 <span>{formatPrice(building.min_price)}</span>
               </td>

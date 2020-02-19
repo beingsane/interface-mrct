@@ -1,14 +1,22 @@
 import produce from 'immer';
+import history from '../../../services/history';
 
-export default function favorite(state = [], action) {
+export default function favorites(state = [], action) {
   switch (action.type) {
-    case '@fav/ADD_SUCCESS':
+    case '@favorites/ADD':
       return produce(state, draft => {
-        const { building } = action;
+        const buildingIndex = draft.findIndex(b => b.id === action.building.id);
 
-        draft.push(building);
+        if (buildingIndex >= 0) {
+          draft[buildingIndex].amount += 1;
+        } else {
+          draft.push({
+            ...action.building,
+          });
+        }
+        history.push('/favorites');
       });
-    case '@fav/REMOVE':
+    case '@favorites/REMOVE':
       return produce(state, draft => {
         const buildingIndex = draft.findIndex(b => b.id === action.id);
 

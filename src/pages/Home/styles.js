@@ -1,18 +1,37 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+export const Container = styled.div`
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    padding: 15px;
+  }
+`;
+
 export const BuildingsList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
+  grid-gap: 20px;
   list-style: none;
 
   li {
     display: flex;
     flex-direction: column;
     background: #fff;
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: 6px;
+    padding: 15px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s;
+    }
 
     img {
       align-self: center;
@@ -26,6 +45,7 @@ export const BuildingsList = styled.ul`
       color: #333;
       margin: 5px 20px;
       align-items: center;
+      text-align: center;
     }
 
     > span {

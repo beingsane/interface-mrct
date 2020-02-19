@@ -1,4 +1,4 @@
-import { call, select, put, all, takeLatest } from 'redux-saga/effects';
+/* import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 
 import api from '../../../services/api';
 import history from '../../../services/history';
@@ -12,10 +12,7 @@ function* addToFavorites({ id }) {
   );
 
   if (!buildingExists) {
-    const response = yield call(
-      api.get,
-      `https://www.orulo.com.br/api/v2/buildings/${id}`
-    );
+    const response = yield call(api.get, `buildings`);
 
     const data = {
       ...response.data,
@@ -29,4 +26,4 @@ function* addToFavorites({ id }) {
   }
 }
 
-export default all([takeLatest('@fav/ADD_REQUEST', addToFavorites)]);
+export default all([takeLatest('@fav/ADD_REQUEST', addToFavorites)]); */

@@ -9,19 +9,41 @@ export const Container = styled.div`
 export const BuildingsTable = styled.table`
   width: 100%;
 
-  thead th {
+  thead tr {
     color: #131313;
-    text-align: center;
-    padding: 12px;
-    text-transform: uppercase;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+
+    td {
+      text-align: center;
+
+      > span {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  tbody td {
+    margin-left: auto;
+  }
+
+  strong {
+    color: #454a51;
+    padding: 15px;
+    display: block;
+    font-size: 16px;
   }
 
   image {
     height: 100px;
   }
 
-  strong {
-    color: #454a51;
+  p {
+    display: block;
+    padding: 5px 0;
+    text-justify: auto;
+    font-size: 14px;
   }
 
   span {

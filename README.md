@@ -33,5 +33,7 @@ yarn start
 
 ## :dart: Screens
 
-![Screenshot](/src/assets/screens/screen1.PNG)
+![](src/assets/screens/screen.PNG)
+
+
 

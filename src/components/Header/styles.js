@@ -5,7 +5,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 30px 0;
+  margin: 20px 0;
 `;
 
 export const Favorites = styled(Link)`
@@ -24,12 +24,14 @@ export const Favorites = styled(Link)`
 
     strong {
       display: block;
-      color: #191919;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
     }
 
     span {
       font-size: 12px;
-      color: #999;
+      color: #565656;
     }
   }
 `;

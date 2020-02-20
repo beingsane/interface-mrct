@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+// import { Grid, Card } from '@material-ui/core/Grid';
 import { MdFavorite } from 'react-icons/md';
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
-import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 import * as FavActions from '../../store/modules/favorites/actions';
 
-import { BuildingsList, Container } from './styles';
+import { Container, Grid, Card, CardContent, CardActions } from './styles';
 
 export default function Home() {
   const [page, setPage] = useState(1);
@@ -43,23 +43,28 @@ export default function Home() {
 
   return (
     <Container>
-      <BuildingsList>
+      <Grid>
         {data.buildings.map(building => (
-          <li key={building.id}>
-            <strong>{building.name}</strong>
+          <Card>
             <img src={building.default_image['520x280']} alt={building.name} />
-            <span>{building.address.city}</span>
-            <p>{building.address.area}</p>
-            <span>{formatPrice(building.min_price)}</span>
-            <button type="button" onClick={() => handleAddFavorite(building)}>
+            <CardContent>
               <div>
-                <MdFavorite size={16} color="#fff" />
+                <span>{building.name}</span>
               </div>
-              <span>Adicionar à sua lista de favoritos</span>
-            </button>
-          </li>
+              <span>{building.address.city}</span>
+              <p>{building.address.area}</p>
+            </CardContent>
+            <CardActions>
+              <button type="button" onClick={() => handleAddFavorite(building)}>
+                <div>
+                  <MdFavorite size={16} color="#fff" />
+                </div>
+                <span>Adicionar à sua lista de favoritos</span>
+              </button>
+            </CardActions>
+          </Card>
         ))}
-      </BuildingsList>
+      </Grid>
       <footer>
         <div>
           <button type="button" onClick={handlePrev}>

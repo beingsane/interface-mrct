@@ -9,11 +9,11 @@ import Header from './components/Header';
 import Routes from './routes';
 
 import history from './services/history';
-import store from './store';
+import { store, persistor } from './store';
 
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store} persistor={persistor}>
       <Router history={history}>
         <Header />
         <Routes />

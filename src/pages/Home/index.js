@@ -66,14 +66,12 @@ export default function Home() {
         ))}
       </Grid>
       <footer>
-        <div>
-          <button type="button" onClick={handlePrev}>
-            <FaArrowCircleLeft size={20} color="#131313" />
-          </button>
-          <button type="button" onClick={handleNext}>
-            <FaArrowCircleRight size={20} color="#131313" />
-          </button>
-        </div>
+        <button type="button" onClick={handlePrev}>
+          <FaArrowCircleLeft size={35} color="#131313" />
+        </button>
+        <button type="button" onClick={handleNext}>
+          <FaArrowCircleRight size={35} color="#131313" />
+        </button>
       </footer>
     </Container>
   );

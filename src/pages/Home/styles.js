@@ -13,7 +13,6 @@ export const Container = styled.div`
   button {
     background: none;
     border: 0;
-    padding: 30px;
   }
 `;
 
@@ -26,6 +25,12 @@ export const Grid = styled.div`
 
   @media (max-width: 780px) {
     grid-template-columns: repeat(1, 1fr);
+  }
+  text-align: center;
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
   }
   text-align: center;
 `;
@@ -74,7 +79,7 @@ export const CardContent = styled.div`
 `;
 
 export const CardActions = styled.div`
-  button {
+  > button {
     background: linear-gradient(to bottom, #cf2b4f, #980021);
     border-radius: 3px;
     border: none;

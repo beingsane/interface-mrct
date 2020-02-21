@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { MdDelete } from 'react-icons/md';
 
-import { formatPrice } from '../../util/format';
-import * as FavActions from '../../store/modules/favorites/actions';
+import { formatPrice } from '~/util/format';
+import * as FavActions from '~/store/modules/favorites/actions';
 
 import { Container, Cards, Building, Details, Footer } from './styles';
 

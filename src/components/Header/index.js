@@ -6,7 +6,7 @@ import { MdFavorite } from 'react-icons/md';
 
 import { Container, Favorites } from './styles';
 
-import logo from '../../assets/images/logo.png';
+import logo from '~/assets/images/logo.png';
 
 export default function Header() {
   const favoriteSize = useSelector(state => state.favorite.length);

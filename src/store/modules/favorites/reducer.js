@@ -1,5 +1,5 @@
 import produce from 'immer';
-import history from '../../../services/history';
+import history from '~/services/history';
 
 export default function favorites(state = [], action) {
   switch (action.type) {

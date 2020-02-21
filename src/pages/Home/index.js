@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
-import api from '../../services/api';
+import api from '~/services/api';
 
-import * as FavActions from '../../store/modules/favorites/actions';
+import * as FavActions from '~/store/modules/favorites/actions';
 
 import {
   Container,

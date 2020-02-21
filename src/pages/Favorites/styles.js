@@ -73,3 +73,18 @@ export const Details = styled.div`
     font-style: italic;
   }
 `;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  button {
+    background: #454a51;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+`;

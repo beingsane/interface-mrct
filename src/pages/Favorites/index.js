@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { MdDelete } from 'react-icons/md';
@@ -6,7 +7,7 @@ import { MdDelete } from 'react-icons/md';
 import { formatPrice } from '../../util/format';
 import * as FavActions from '../../store/modules/favorites/actions';
 
-import { Container, Cards, Building, Details } from './styles';
+import { Container, Cards, Building, Details, Footer } from './styles';
 
 export default function Favorites() {
   const favorites = useSelector(state =>
@@ -47,6 +48,15 @@ export default function Favorites() {
           </>
         ))}
       </Cards>
+      <Footer>
+        <Link
+          to={{
+            pathname: '/',
+          }}
+        >
+          <button type="button">Home</button>
+        </Link>
+      </Footer>
     </Container>
   );
 }

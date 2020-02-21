@@ -3,17 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 1020px;
   margin: 0 auto;
-
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  button {
-    background: none;
-    border: 0;
-  }
 `;
 
 export const Grid = styled.div`
@@ -41,6 +30,7 @@ export const Card = styled.div`
   box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
@@ -81,7 +71,7 @@ export const CardContent = styled.div`
 export const CardActions = styled.div`
   > button {
     background: linear-gradient(to bottom, #cf2b4f, #980021);
-    border-radius: 3px;
+    border-radius: 6px;
     border: none;
     color: #fff;
     padding: 10px;
@@ -89,5 +79,17 @@ export const CardActions = styled.div`
     font-weight: 600;
     text-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
+  }
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  button {
+    background: none;
+    border: 0;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 `;

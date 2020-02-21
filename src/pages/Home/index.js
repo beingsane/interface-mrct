@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { Grid, Card } from '@material-ui/core/Grid';
-import { MdFavorite } from 'react-icons/md';
+import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
 import api from '../../services/api';
 
 import * as FavActions from '../../store/modules/favorites/actions';
 
-import { Container, Grid, Card, CardContent, CardActions } from './styles';
+import {
+  Container,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Footer,
+} from './styles';
 
 export default function Home() {
   const [page, setPage] = useState(1);
-  const [data, setData] = useState({ buildings: [] });
+  const [data, setData] = useState([]);
   const dispatch = useDispatch();
+
+  const favoriteSelect = useSelector(state => state.favorite);
 
   useEffect(() => {
     async function loadBuildings() {
@@ -23,11 +31,27 @@ export default function Home() {
           page,
         },
       });
-      setData(response.data);
+
+      const buildings = response.data.buildings.map(building => {
+        const checkBuilding = favoriteSelect.findIndex(
+          favorite => favorite.id === building.id
+        );
+        if (checkBuilding >= 0) {
+          return {
+            ...building,
+            favorite: true,
+          };
+        }
+        return {
+          ...building,
+          favorite: false,
+        };
+      });
+      setData(buildings);
     }
 
     loadBuildings();
-  }, [page]);
+  }, [favoriteSelect, page]);
 
   function handlePrev() {
     setPage(page - 1);
@@ -44,8 +68,8 @@ export default function Home() {
   return (
     <Container>
       <Grid>
-        {data.buildings.map(building => (
-          <Card>
+        {data.map(building => (
+          <Card key={building.id} onClick={() => handleAddFavorite(building)}>
             <img src={building.default_image['520x280']} alt={building.name} />
             <CardContent>
               <div>
@@ -55,9 +79,13 @@ export default function Home() {
               <p>{building.address.area}</p>
             </CardContent>
             <CardActions>
-              <button type="button" onClick={() => handleAddFavorite(building)}>
+              <button type="button">
                 <div>
-                  <MdFavorite size={16} color="#fff" />
+                  {building.favorite ? (
+                    <MdFavorite size={18} color="#fff" />
+                  ) : (
+                    <MdFavoriteBorder size={18} color="#fff" />
+                  )}
                 </div>
                 <span>Adicionar à sua lista de favoritos</span>
               </button>
@@ -65,14 +93,14 @@ export default function Home() {
           </Card>
         ))}
       </Grid>
-      <footer>
+      <Footer>
         <button type="button" onClick={handlePrev}>
           <FaArrowCircleLeft size={35} color="#131313" />
         </button>
         <button type="button" onClick={handleNext}>
           <FaArrowCircleRight size={35} color="#131313" />
         </button>
-      </footer>
+      </Footer>
     </Container>
   );
 }

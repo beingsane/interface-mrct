@@ -18,6 +18,10 @@ export default function Favorites() {
 
   const dispatch = useDispatch();
 
+  const handleRemoveFavorite = building => {
+    dispatch(FavActions.removeFromFavorites(building));
+  };
+
   return (
     <Container>
       <Cards>
@@ -38,9 +42,7 @@ export default function Favorites() {
               </Details>
               <button
                 type="button"
-                onClick={() =>
-                  dispatch(FavActions.removeFromFavorites(building.id))
-                }
+                onClick={() => handleRemoveFavorite(building.id)}
               >
                 <MdDelete size={20} color="#454a51" />
               </button>

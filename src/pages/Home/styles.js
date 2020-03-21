@@ -25,6 +25,7 @@ export const Grid = styled.div`
 `;
 
 export const Card = styled.div`
+  max-width: 100%;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
@@ -39,6 +40,8 @@ export const Card = styled.div`
 
   img {
     width: 100%;
+    height: 260px;
+    object-fit: cover;
   }
 `;
 
@@ -58,12 +61,17 @@ export const CardContent = styled.div`
     font-weight: bold;
   }
 
-  > span {
+  > strong {
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 2;
   }
 
-  div p {
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  span {
     font-size: 14px;
   }
 `;

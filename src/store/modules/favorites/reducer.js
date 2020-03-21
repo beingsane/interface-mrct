@@ -1,5 +1,4 @@
 import produce from 'immer';
-import history from '~/services/history';
 
 export default function favorites(state = [], action) {
   switch (action.type) {
@@ -14,7 +13,6 @@ export default function favorites(state = [], action) {
             ...action.building,
           });
         }
-        history.push('/favorites');
       });
     case '@favorites/REMOVE':
       return produce(state, draft => {

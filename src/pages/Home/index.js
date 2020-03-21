@@ -6,6 +6,7 @@ import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 
 import api from '~/services/api';
 
+import { formatPrice } from '~/util/format';
 import * as FavActions from '~/store/modules/favorites/actions';
 
 import {
@@ -53,17 +54,17 @@ export default function Home() {
     loadBuildings();
   }, [favoriteSelect, page]);
 
-  function handlePrev() {
+  const handlePrev = () => {
     setPage(page - 1);
-  }
+  };
 
-  function handleNext() {
+  const handleNext = () => {
     setPage(page + 1);
-  }
+  };
 
-  function handleAddFavorite(building) {
+  const handleAddFavorite = building => {
     dispatch(FavActions.addToFavorites(building));
-  }
+  };
 
   return (
     <Container>
@@ -75,8 +76,9 @@ export default function Home() {
               <div>
                 <span>{building.name}</span>
               </div>
-              <span>{building.address.city}</span>
+              <strong>{building.address.city}</strong>
               <p>{building.address.area}</p>
+              <span>{formatPrice(building.min_price)}</span>
             </CardContent>
             <CardActions>
               <button type="button">
@@ -87,7 +89,11 @@ export default function Home() {
                     <MdFavoriteBorder size={18} color="#fff" />
                   )}
                 </div>
-                <span>Adicionar à sua lista de favoritos</span>
+                <span>
+                  {building.favorite
+                    ? 'Remover da sua lista de favoritos'
+                    : 'Adicionar à sua lista de favoritos'}
+                </span>
               </button>
             </CardActions>
           </Card>

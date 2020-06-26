@@ -9,7 +9,7 @@ _This project was developed with the following technologies:_
 * Redux
 * [styled-components](https://styled-components.com/)
 * [Órulo api](http://api.orulo.com.br.s3-website-us-east-1.amazonaws.com/)
-* [VS Code](https://code.visualstudio.com/) with [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)/[Prettier](https://prettier.io/)
+* [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)/[Prettier](https://prettier.io/)
 
 # :information_source: Getting Started
 
